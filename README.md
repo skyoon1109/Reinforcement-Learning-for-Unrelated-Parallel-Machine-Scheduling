@@ -1,11 +1,11 @@
-# 1️⃣Reinforcement Learning for Unrelated Parallel Machine Scheduling
+# 📖Reinforcement Learning for Unrelated Parallel Machine Scheduling
 - Modeled semiconductor photolithography processes as an unrelated parallel machine scheduling problem with photomask constraints.
 - Implemented a policy‑based agent using PyTorch to dynamically dispatch jobs in real‑time as they arrived into the system.
 - Applied Policy Optimization with Multiple Optima (POMO) by checking machines in different permutation orders when allocating jobs to increase solution diversity.
 - Designed and trained the agent using REINFORCE‑based algorithms with POMO baseline to optimize makespan in dynamic job arrival scenarios.
 - Achieved performance metrics that outperformed standard rule‑based algorithms (SPT) and approached constraint programming solution quality.
 
-# 2️⃣Problem Definition
+# 1️⃣Problem Definition
 ## Unrelated Parallel Machine Scheduling with Mask Constraints
 - Each lot has a designated Process_ID  
 - Each Process_ID has specific eligible Machine sets and Mask sets  
@@ -29,14 +29,14 @@
 
 ![Image](https://github.com/user-attachments/assets/4aec74a5-9ca5-4890-8792-dedb9293cad8)
 
-# 3️⃣Data Generation Method
+# 2️⃣Data Generation Method
 * Generate Lot ready times randomly with time intervals
 * (Number of Process_IDs) = (Number of Lots) ÷ 2
 * (Number of Masks) = (Number of Machines)
 * Randomly assign eligible Machines and Masks for each Process_ID
 * Set processing times randomly between 20-50
 
-# 4️⃣RL based Scheduling
+# 3️⃣RL based Scheduling
 ## Overall Architecture
 ### Dispatching
 * Agent selects a machine and assigns a lot as an action when given a state
@@ -81,7 +81,7 @@
 * Compose each batch with multiple instances, update with batch's average loss
 ![Image](https://github.com/user-attachments/assets/a0b6574d-6214-4b0a-ba57-bddf27c0cb32)
 
-# 5️⃣Model Comparison with Rule-based & CP
+# 4️⃣Model Comparison with Rule-based & CP
 ## RL vs Rule-based
 * Evaluated using 100 randomly generated instances for each case
 * RL shows shorter makespan than simple rule-based model
