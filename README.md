@@ -15,3 +15,5 @@
 - Each lot has a Ready (release) time → Assume lots arrive in real-time  
 - Each Machine has a queue → Considering real-world conditions  
 - Objective: Minimizing Makespan  
+
+![Image](https://github.com/user-attachments/assets/8892cbc8-10d3-4129-b67e-9a1773b0b1e7)
