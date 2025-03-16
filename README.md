@@ -76,7 +76,7 @@
 * Uses POMO baseline
 
 ## Train
-* Consider each machine processing order as one POMO Trajectory → For n machines: generate n! trajectories
+* Consider each machine processing order as one POMO Trajectory → For $n$ machines: generate $n!$ trajectories
 * Use average of all trajectories as baseline for variance reduction
 * Compose each batch with multiple instances, update with batch's average loss
 ![Image](https://github.com/user-attachments/assets/a0b6574d-6214-4b0a-ba57-bddf27c0cb32)
