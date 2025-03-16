@@ -26,3 +26,24 @@
 * Determine the actual processing order of lots in the waiting list
 * Immediately assign if a processable lot is in the queue
 * Use SPT (Shortest Processing Time) → To minimize makespan
+
+![Image](https://github.com/user-attachments/assets/4aec74a5-9ca5-4890-8792-dedb9293cad8)
+
+# Data Generation Method
+* Generate Lot ready times randomly with time intervals
+* (Number of Process_IDs) = (Number of Lots) ÷ 2
+* (Number of Masks) = (Number of Machines)
+* Randomly assign eligible Machines and Masks for each Process_ID
+* Set processing times randomly between 20-50
+
+# RL based Schduling
+## Dispatching
+* Agent selects a machine and assigns a lot as an action when given a state
+* Attempts to implement dynamic scheduling without knowledge of subsequent lot information
+
+## Sequencing
+* Select the lot with the shortest processing time (SPT) from processable lots in each machine's waiting list
+
+## Reward
+* Return the negative of the final makespan as reward after completing an episode  
+![Image](https://github.com/user-attachments/assets/eb250de0-c8e1-4c62-8af3-4411bfa00ce7)
