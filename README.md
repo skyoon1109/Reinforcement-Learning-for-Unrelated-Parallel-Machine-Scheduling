@@ -109,3 +109,10 @@
 | 10 | 4 | 120.4 | 99.7 |
 | 20 | 3 | 233.5 | 219.1 |
 | 20 | 4 | 198.4 | 168.7 |
+
+# 5️⃣Gantt Chart Examples
+- 3 Machines
+![Image](https://github.com/user-attachments/assets/2b0e2f7d-ce86-4a02-9989-788590be9c5a)
+
+- 4 Machines
+![Image](https://github.com/user-attachments/assets/6d9c1fe0-fe30-46f4-a6e8-a67bc8007409)
