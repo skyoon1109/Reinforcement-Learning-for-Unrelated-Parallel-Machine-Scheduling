@@ -17,3 +17,12 @@
 - Objective: Minimizing Makespan  
 
 ![Image](https://github.com/user-attachments/assets/8892cbc8-10d3-4129-b67e-9a1773b0b1e7)
+
+## 2-Step Scheduling
+### Step 1: Lot Assignment to Machine Waiting Lists
+* Dispatch ready lots to machine waiting lists considering workload and processing time per machine
+
+### Step 2: Lot Processing Order Decision
+* Determine the actual processing order of lots in the waiting list
+* Immediately assign if a processable lot is in the queue
+* Use SPT (Shortest Processing Time) → To minimize makespan
