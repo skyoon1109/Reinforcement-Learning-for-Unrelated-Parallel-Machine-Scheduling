@@ -36,14 +36,47 @@
 * Randomly assign eligible Machines and Masks for each Process_ID
 * Set processing times randomly between 20-50
 
-# RL based Schduling
-## Dispatching
+# RL based Scheduling
+## Overall Architecture
+### Dispatching
 * Agent selects a machine and assigns a lot as an action when given a state
 * Attempts to implement dynamic scheduling without knowledge of subsequent lot information
 
-## Sequencing
+### Sequencing
 * Select the lot with the shortest processing time (SPT) from processable lots in each machine's waiting list
 
-## Reward
+### Reward
 * Return the negative of the final makespan as reward after completing an episode  
 ![Image](https://github.com/user-attachments/assets/eb250de0-c8e1-4c62-8af3-4411bfa00ce7)
+
+## State Description
+- Number of lots in each machine queue
+- Availability of each mask (0 or 1)
+- Total usage count of each mask
+- Processing time of next ready lot on each machine
+- Total processing time of each machine
+- Completed job count for each machine
+- Idle time of each machine
+- Total processing time in each machine queue
+- Idle status of each machine (1 if idle, 0 if not)
+
+## Environment Step
+* Process jobs by cycling through machines in given order
+* Increase global time t after completing a full machine cycle
+* Take Action if lots are ready
+* If no lots are ready, advance simulation to next ready time
+* End episode when all lots are processed
+![Image](https://github.com/user-attachments/assets/46c445ab-bd87-4990-a8f0-1365110e0d22)
+
+## Agent and REINFORCE Algorithm
+* Multi-Layer Perceptron (MLP) policy network structure
+* Takes state vector as input when a lot becomes ready and selects one machine as action
+* Performs only dispatching role when lots become ready (no subsequent lot information)
+* Returns negative makespan as reward after episode completion
+* Uses POMO baseline
+
+## Train
+* Consider each machine processing order as one POMO Trajectory → For n machines: generate n! trajectories
+* Use average of all trajectories as baseline for variance reduction
+* Compose each batch with multiple instances, update with batch's average loss
+![Image](https://github.com/user-attachments/assets/a0b6574d-6214-4b0a-ba57-bddf27c0cb32)
