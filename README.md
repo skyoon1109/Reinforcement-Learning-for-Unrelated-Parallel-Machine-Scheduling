@@ -83,9 +83,29 @@
 
 # 5️⃣Model Comparison with Rule-based & CP
 ## RL vs Rule-based
+* Evaluated using 100 randomly generated instances for each case
+* RL shows shorter makespan than simple rule-based model
+* Rule-based model assigns lots to machines with lowest accumulated idle time → lacks flexibility
+
 | # of Lots | # of Machine | RL | Rule-based |
 |-----------|--------------|-----|------------|
 | 10 | 3 | 129.85 | 213.03 |
 | 10 | 4 | 118.05 | 175.71 |
 | 20 | 3 | 234.31 | 356.15 |
 | 20 | 4 | 198.31 | 300.83 |
+
+## RL vs CP
+* Evaluated using 10 randomly generated instances for each case
+* CP finds optimal solutions while RL shows gap from optimal
+* RL executes very quickly while CP execution time increases exponentially with lot count
+* CP finds optimal solutions within 10 seconds for 10 lots, but takes up to 5-6 minutes for 20 lots
+* Information availability difference:
+ * CP knows all lot information in advance to find optimal solutions
+ * RL lacks subsequent lot information, only dispatching lots as they become ready
+
+| # of Lots | # of Machine | RL | CP |
+|-----------|--------------|-----|-----|
+| 10 | 3 | 129.7 | 117.1 |
+| 10 | 4 | 120.4 | 99.7 |
+| 20 | 3 | 233.5 | 219.1 |
+| 20 | 4 | 198.4 | 168.7 |
