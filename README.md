@@ -5,6 +5,10 @@
 - Designed and trained the agent using REINFORCE‑based algorithms with POMO baseline to optimize makespan in dynamic job arrival scenarios.
 - Achieved performance metrics that outperformed standard rule‑based algorithms (SPT) and approached constraint programming solution quality.
 
+# 🖥️Code files
+- 3_machine_scheduling.ipynb : Code for 3 machines scheduling using REINFORCE with POMO baseline.
+- 4_machine_scheduling.ipynb : Code for 4 machines scheduling using REINFORCE with POMO baseline.
+
 # 1️⃣Problem Definition
 ## Unrelated Parallel Machine Scheduling with Mask Constraints
 - Each lot has a designated Process_ID  
